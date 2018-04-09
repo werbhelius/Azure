@@ -4,7 +4,7 @@ import android.Manifest
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.werb.livepermissions.LivePermissions
+import com.werb.lifepermissions.LifePermissions
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button.setOnClickListener {
-            LivePermissions(this)
+            LifePermissions(this)
                 .request(Manifest.permission.CAMERA)
                 .subscribe {
                     if (it) {

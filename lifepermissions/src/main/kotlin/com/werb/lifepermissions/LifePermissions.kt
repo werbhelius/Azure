@@ -1,17 +1,15 @@
-package com.werb.livepermissions
+package com.werb.lifepermissions
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Build
 import android.support.v4.app.FragmentActivity
 
 /**
  * Created by wanbo on 2018/4/9.
  */
-class LivePermissions(private val activity: FragmentActivity) {
+class LifePermissions(private val activity: FragmentActivity) {
 
     private val tag = "LivePermissions"
-    private val livePermissionFragment: LivePermissionFragment by lazy { getLivePermissionFragment(activity) }
+    private val livePermissionFragment: LifePermissionFragment by lazy { getLivePermissionFragment(activity) }
     private lateinit var block: (granted: Boolean) -> Unit
     private lateinit var permissions: Array<out String>
 
@@ -23,7 +21,7 @@ class LivePermissions(private val activity: FragmentActivity) {
         return hasPermission
     }
 
-    fun request(vararg permissions: String): LivePermissions {
+    fun request(vararg permissions: String): LifePermissions {
         this.permissions = permissions
         return this
     }
@@ -40,10 +38,10 @@ class LivePermissions(private val activity: FragmentActivity) {
         }
     }
 
-    private fun getLivePermissionFragment(activity: FragmentActivity): LivePermissionFragment {
-        var livePermissionFragment: LivePermissionFragment? = findLivePermissionFragment(activity)
+    private fun getLivePermissionFragment(activity: FragmentActivity): LifePermissionFragment {
+        var livePermissionFragment: LifePermissionFragment? = findLivePermissionFragment(activity)
         if (livePermissionFragment == null) {
-            livePermissionFragment = LivePermissionFragment()
+            livePermissionFragment = LifePermissionFragment()
             val fragmentManager = activity.supportFragmentManager
             fragmentManager
                 .beginTransaction()
@@ -54,8 +52,8 @@ class LivePermissions(private val activity: FragmentActivity) {
         return livePermissionFragment
     }
 
-    private fun findLivePermissionFragment(activity: FragmentActivity): LivePermissionFragment? {
-        return activity.supportFragmentManager.findFragmentByTag(tag) as LivePermissionFragment?
+    private fun findLivePermissionFragment(activity: FragmentActivity): LifePermissionFragment? {
+        return activity.supportFragmentManager.findFragmentByTag(tag) as LifePermissionFragment?
     }
 
     private fun isGranted(permission: String): Boolean {

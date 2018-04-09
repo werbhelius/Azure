@@ -1,4 +1,4 @@
-package com.werb.livepermissions
+package com.werb.lifepermissions
 
 import android.annotation.TargetApi
 import android.arch.lifecycle.Observer
@@ -10,10 +10,10 @@ import android.support.v4.app.Fragment
 
 
 /**
- * [LivePermissionFragment] help to dispose permission
+ * [LifePermissionFragment] help to dispose permission
  * Created by wanbo on 2018/4/9.
  */
-internal class LivePermissionFragment : Fragment() {
+internal class LifePermissionFragment : Fragment() {
 
     private val PERMISSIONS_REQUEST_CODE = 21
     private lateinit var permissionViewModel: PermissionViewModel
