@@ -45,6 +45,8 @@ internal class LifePermissionFragment : Fragment() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode != PERMISSIONS_REQUEST_CODE) return
+        // 表示用户是否勾选了不再询问，如果是返回 false，则这时候应该弹出对话框提示用户去系统设置页面打开权限
+        val shouldShowRequestPermissionRationale = shouldShowRequestPermissionRationale(permissions[0])
         permissionViewModel.granted.value = hasAllPermissionsGranted(grantResults)
     }
 

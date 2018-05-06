@@ -21,13 +21,17 @@ class LifePermissions(private val activity: FragmentActivity) {
         return hasPermission
     }
 
-    fun request(vararg permissions: String): LifePermissions {
+    fun permissions(vararg permissions: String): LifePermissions {
         this.permissions = permissions
         return this
     }
 
-    fun subscribe(block: (granted: Boolean) -> Unit) {
+    fun subscribe(block: (granted: Boolean) -> Unit): LifePermissions {
         this.block = block
+        return this
+    }
+
+    fun request(){
         execute()
     }
 

@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             LifePermissions(this)
-                .request(Manifest.permission.CAMERA)
+                .permissions(Manifest.permission.CAMERA)
                 .subscribe {
                     if (it) {
                         Toast.makeText(this, "CAMERA Permission ok", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this, "CAMERA Permission failed", Toast.LENGTH_SHORT).show()
                     }
-                }
+                }.request()
         }
 
     }
