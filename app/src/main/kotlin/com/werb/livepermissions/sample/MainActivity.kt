@@ -21,11 +21,35 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             requestPermissions()
         }
+
+        button2.setOnClickListener {
+            requestPermissions2()
+        }
     }
 
     private fun requestPermissions() {
         LifePermissions(this)
             .permissions(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE)
+            .subscribe {
+                if (it) {
+                    Toast.makeText(this, "All Permissions Granted", Toast.LENGTH_SHORT).show()
+                } else {
+                    AlertDialog.Builder(this)
+                        .setTitle("We need all the permissions to keep running.")
+                        .setNegativeButton("dismiss") { dialog, _ -> dialog?.dismiss() }
+                        .setPositiveButton("go setting") { _, _ ->
+                            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                            intent.data = Uri.fromParts("package", packageName, null)
+                            startActivity(intent)
+                        }.create().show()
+                }
+            }
+            .request()
+    }
+
+    private fun requestPermissions2() {
+        LifePermissions(this)
+            .permissions(Manifest.permission.READ_CONTACTS, Manifest.permission.ACCESS_FINE_LOCATION)
             .subscribe {
                 if (it) {
                     Toast.makeText(this, "All Permissions Granted", Toast.LENGTH_SHORT).show()
