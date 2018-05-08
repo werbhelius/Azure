@@ -1,13 +1,6 @@
 package com.werb.lifepermissions
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
-
 /**
- * Created by wanbo on 2018/4/9.
+ * Created by wanbo on 2018/5/8.
  */
-internal class PermissionViewModel : ViewModel() {
-
-    val granted = MutableLiveData<Boolean>()
-
-}
+data class Permission(val permissionName: String, val isDeniedWithDontAsk: Boolean = false)
