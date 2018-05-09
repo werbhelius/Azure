@@ -25,15 +25,31 @@ android {
             java.srcDirs 'src/main/kotlin'
         }
     }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.1.1'
+            }
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation ("com.android.support:appcompat-v7:${versions.support}", {
+    implementation("com.android.support:appcompat-v7:${versions.support}", {
         exclude group: "android.arch.lifecycle"
     })
-    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
     testImplementation 'junit:junit:4.12'
     implementation project(':lifepermissions')
+    implementation'com.werb.pickphotoview:pickphotoview:0.4.6'
 }
