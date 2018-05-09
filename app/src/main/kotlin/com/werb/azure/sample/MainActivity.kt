@@ -1,4 +1,4 @@
-package com.werb.livepermissions.sample
+package com.werb.azure.sample
 
 import android.Manifest
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.provider.Settings
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.werb.lifepermissions.LifePermissions
+import com.werb.azure.Azure
 import com.werb.pickphotoview.PickPhotoView
 import com.werb.pickphotoview.util.PickConfig
 import kotlinx.android.synthetic.main.activity_main.*
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestStoragePermissions() {
-        LifePermissions(this)
+        Azure(this)
             .permissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .subscribe {
                 if (it) {
@@ -51,12 +51,11 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     permissionDialog()
                 }
-            }
-            .request()
+            }.request()
     }
 
     private fun requestCameraPermissions() {
-        LifePermissions(this)
+        Azure(this)
             .permissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .subscribe {
                 if (it) {
@@ -65,8 +64,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     permissionDialog()
                 }
-            }
-            .request()
+            }.request()
     }
 
     private fun openAlbum() {

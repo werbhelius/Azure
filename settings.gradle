@@ -1,1 +1,1 @@
-include ':app', ':lifepermissions'
+include ':app', ':azure'

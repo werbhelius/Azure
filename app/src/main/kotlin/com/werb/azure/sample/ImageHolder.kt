@@ -1,4 +1,4 @@
-package com.werb.livepermissions.sample
+package com.werb.azure.sample
 
 import android.view.View
 import com.bumptech.glide.Glide

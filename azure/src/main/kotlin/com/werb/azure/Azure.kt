@@ -1,25 +1,24 @@
-package com.werb.lifepermissions
+package com.werb.azure
 
-import android.os.Build
 import android.support.v4.app.FragmentActivity
 
 /**
  * Created by wanbo on 2018/4/9.
  */
-class LifePermissions(private val activity: FragmentActivity) {
+class Azure(private val activity: FragmentActivity) {
 
     private val tag = "LivePermissions"
-    private val livePermissionFragment: LifePermissionFragment by lazy { getLivePermissionFragment(activity) }
+    private val livePermissionFragment: AzureFragment by lazy { getLivePermissionFragment(activity) }
     private lateinit var permissions: Array<out String>
 
     fun checkPermission(vararg permissions: String): Boolean = livePermissionFragment.checkPermissionsGranted(*permissions)
 
-    fun permissions(vararg permissions: String): LifePermissions {
+    fun permissions(vararg permissions: String): Azure {
         this.permissions = permissions
         return this
     }
 
-    fun subscribe(grantedBlock: (isGranted: Boolean) -> Unit): LifePermissions {
+    fun subscribe(grantedBlock: (isGranted: Boolean) -> Unit): Azure {
         livePermissionFragment.grantedBlock = grantedBlock
         return this
     }
@@ -32,10 +31,10 @@ class LifePermissions(private val activity: FragmentActivity) {
         }
     }
 
-    private fun getLivePermissionFragment(activity: FragmentActivity): LifePermissionFragment {
-        var livePermissionFragment: LifePermissionFragment? = findLivePermissionFragment(activity)
+    private fun getLivePermissionFragment(activity: FragmentActivity): AzureFragment {
+        var livePermissionFragment: AzureFragment? = findLivePermissionFragment(activity)
         if (livePermissionFragment == null) {
-            livePermissionFragment = LifePermissionFragment()
+            livePermissionFragment = AzureFragment()
             val fragmentManager = activity.supportFragmentManager
             fragmentManager
                 .beginTransaction()
@@ -46,8 +45,8 @@ class LifePermissions(private val activity: FragmentActivity) {
         return livePermissionFragment
     }
 
-    private fun findLivePermissionFragment(activity: FragmentActivity): LifePermissionFragment? {
-        return activity.supportFragmentManager.findFragmentByTag(tag) as LifePermissionFragment?
+    private fun findLivePermissionFragment(activity: FragmentActivity): AzureFragment? {
+        return activity.supportFragmentManager.findFragmentByTag(tag) as AzureFragment?
     }
 
 }

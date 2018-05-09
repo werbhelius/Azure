@@ -49,8 +49,7 @@ dependencies {
         exclude group: "android.arch.lifecycle"
     })
     implementation 'android.arch.lifecycle:extensions:1.1.1'
-    testImplementation 'junit:junit:4.12'
-    implementation project(':lifepermissions')
+    implementation project(':azure')
     implementation'com.werb.pickphotoview:pickphotoview:0.4.6'
     implementation 'com.otaliastudios:cameraview:1.5.0'
 }
