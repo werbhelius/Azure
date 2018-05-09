@@ -36,3 +36,13 @@ dependencies {
     compileOnly "android.arch.lifecycle:extensions:1.1.1"
     testImplementation 'junit:junit:4.12'
 }
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'werbhelius'
+    groupId = 'com.werb.azure'
+    artifactId = 'azure'
+    publishVersion =  versions.versionName
+    desc = 'Easier to use Android runtime permissions with LiveData ！'
+    website = 'https://github.com/Werb/Azure'
+}
