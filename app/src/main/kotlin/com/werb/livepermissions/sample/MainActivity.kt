@@ -33,17 +33,35 @@ class MainActivity : AppCompatActivity() {
         }
 
         button.setOnClickListener {
-            requestPermissions()
+            requestStoragePermissions()
+        }
+
+        button2.setOnClickListener {
+            requestCameraPermissions()
         }
     }
 
-    private fun requestPermissions() {
+    private fun requestStoragePermissions() {
         LifePermissions(this)
             .permissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .subscribe {
                 if (it) {
-                    Toast.makeText(this, "All Permissions Granted", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Storage Permissions Granted", Toast.LENGTH_SHORT).show()
                     openAlbum()
+                } else {
+                    permissionDialog()
+                }
+            }
+            .request()
+    }
+
+    private fun requestCameraPermissions() {
+        LifePermissions(this)
+            .permissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            .subscribe {
+                if (it) {
+                    Toast.makeText(this, "Camera Permissions Granted", Toast.LENGTH_SHORT).show()
+                    startActivityForResult(Intent(this, CameraActivity::class.java), PickConfig.PICK_PHOTO_DATA)
                 } else {
                     permissionDialog()
                 }

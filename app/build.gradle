@@ -52,4 +52,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation project(':lifepermissions')
     implementation'com.werb.pickphotoview:pickphotoview:0.4.6'
+    implementation 'com.otaliastudios:cameraview:1.5.0'
 }

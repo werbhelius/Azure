@@ -18,7 +18,6 @@ internal class LifePermissionFragment : Fragment() {
     private val PERMISSIONS_REQUEST_CODE = 21
     private lateinit var permissionViewModel: PermissionViewModel
     internal var grantedBlock: ((isGranted: Boolean) -> Unit)? = null
-    internal var deniedBlock: ((showPermissionsInfo: Boolean) -> Unit)? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
