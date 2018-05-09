@@ -1,6 +1,6 @@
 # Azure
 
-> Easier to use Android runtime permissions with LiveData ！Easier to use Android runtime permissions with LiveData ！
+> Easier to use Android runtime permissions with LiveData
 
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/Werb/Azure/blob/master/LICENSE)
  [ ![Download](https://api.bintray.com/packages/werbhelius/maven/azure/images/download.svg) ](https://bintray.com/werbhelius/maven/azure/_latestVersion)
