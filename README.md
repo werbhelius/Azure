@@ -3,7 +3,7 @@
 > Easier to use Android runtime permissions with LiveData ！Easier to use Android runtime permissions with LiveData ！
 
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/Werb/Azure/blob/master/LICENSE)
- [ ![Download](https://api.bintray.com/packages/werbhelius/maven/glideman/images/download.svg) ](https://bintray.com/werbhelius/maven/azure/_latestVersion)
+ [ ![Download](https://api.bintray.com/packages/werbhelius/maven/azure/images/download.svg) ](https://bintray.com/werbhelius/maven/azure/_latestVersion)
  [![API](https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=19)
 
 ## Dependency
