@@ -18,8 +18,8 @@ buildscript {
     // app version
     ext.versions = [
             applicationId    : "com.werb.azure.sample",
-            versionCode      : 2,
-            versionName      : "0.1.0",
+            versionCode      : 3,
+            versionName      : "0.2.0",
             minSdkVersion    : 19,
             targetSdkVersion : 28,
             compileSdkVersion: 28,
