@@ -8,14 +8,15 @@
 
 ## Dependency
  ```gradle
-implementation 'com.werb.azure:azure:0.1.0'
+implementation 'com.werb.azure:azure:0.2.0'
 implementation 'android.arch.lifecycle:extensions:1.1.1'
 ```
 
 ## Use
 ```kotlin
+// support dynamic permissions and dangerous permissions
 Azure(this)
-    .permissions(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE)
+    .permissions(Manifest.permission.READ_EXTERNAL_STORAGE, Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
     .subscribe {
         if (it) {
             // do something when permission isGranted
