@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <Button
@@ -19,9 +18,16 @@
         android:layout_toRightOf="@id/button"
         android:text="open camera !" />
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:text="special permission !" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

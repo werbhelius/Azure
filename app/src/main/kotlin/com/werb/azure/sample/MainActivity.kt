@@ -1,8 +1,10 @@
 package com.werb.azure.sample
 
 import android.Manifest
+import android.annotation.TargetApi
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.support.v7.app.AlertDialog
@@ -39,6 +41,10 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             requestCameraPermissions()
         }
+
+        button3.setOnClickListener {
+            requestSpecialPermission()
+        }
     }
 
     private fun requestStoragePermissions() {
@@ -61,6 +67,19 @@ class MainActivity : AppCompatActivity() {
                 if (it) {
                     Toast.makeText(this, "Camera Permissions Granted", Toast.LENGTH_SHORT).show()
                     startActivityForResult(Intent(this, CameraActivity::class.java), PickConfig.PICK_PHOTO_DATA)
+                } else {
+                    permissionDialog()
+                }
+            }.request()
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private fun requestSpecialPermission() {
+        Azure(this)
+            .permissions(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Manifest.permission.RECORD_AUDIO)
+            .subscribe {
+                if (it) {
+                    Toast.makeText(this, "Special Permissions Granted", Toast.LENGTH_SHORT).show()
                 } else {
                     permissionDialog()
                 }
