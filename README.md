@@ -8,8 +8,8 @@
 
 ## Dependency
  ```gradle
-implementation 'com.werb.azure:azure:0.2.0'
-implementation 'android.arch.lifecycle:extensions:1.1.1'
+implementation 'com.werb.azure:azure:0.3.0'
+implementation 'android.arch.lifecycle:extensions:$last_version'
 ```
 
 ## Use
