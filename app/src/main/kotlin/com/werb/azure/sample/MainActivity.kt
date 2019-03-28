@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.werb.azure.Azure
+import com.werb.azure.azure
 import com.werb.pickphotoview.PickPhotoView
 import com.werb.pickphotoview.util.PickConfig
 import kotlinx.android.synthetic.main.activity_main.*
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestCameraPermissions() {
-        Azure(this)
+        azure()
             .permissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .subscribe {
                 if (it) {

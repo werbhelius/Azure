@@ -3,6 +3,7 @@ package com.werb.azure
 import android.annotation.TargetApi
 import android.os.Build
 import android.provider.Settings
+import androidx.fragment.app.FragmentActivity
 
 /**
  * Created by wanbo on 2018/10/15.
@@ -28,3 +29,6 @@ internal fun specialPermissionCheck(permissions:  MutableList<String>): MutableM
         }
     return if (map.isEmpty()) null else map
 }
+
+
+fun FragmentActivity.azure(): Azure = Azure(this)
