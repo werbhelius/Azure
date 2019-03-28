@@ -1,6 +1,6 @@
 package com.werb.azure
 
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 
 /**
  * Created by wanbo on 2018/4/9.

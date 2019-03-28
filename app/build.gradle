@@ -11,7 +11,7 @@ android {
         targetSdkVersion versions.targetSdkVersion
         versionCode versions.versionCode
         versionName versions.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -45,10 +45,10 @@ configurations.all {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation("com.android.support:appcompat-v7:${versions.support}", {
+    implementation("androidx.appcompat:appcompat:${versions.support}", {
         exclude group: "android.arch.lifecycle"
     })
-    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha03'
     implementation project(':azure')
     implementation'com.werb.pickphotoview:pickphotoview:0.4.6'
     implementation 'com.otaliastudios:cameraview:1.5.0'

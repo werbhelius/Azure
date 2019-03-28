@@ -10,7 +10,7 @@ android {
         targetSdkVersion versions.targetSdkVersion
         versionCode versions.versionCode
         versionName versions.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -30,10 +30,8 @@ android {
 
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    compileOnly ("com.android.support:appcompat-v7:${versions.support}", {
-        exclude group: "android.arch.lifecycle"
-    })
-    compileOnly "android.arch.lifecycle:extensions:1.1.1"
+    compileOnly "androidx.appcompat:appcompat:${versions.support}"
+    compileOnly 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha03'
     testImplementation 'junit:junit:4.12'
 }
 

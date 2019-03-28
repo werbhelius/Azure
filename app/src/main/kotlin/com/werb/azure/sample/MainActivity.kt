@@ -7,14 +7,14 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.werb.azure.Azure
 import com.werb.pickphotoview.PickPhotoView
 import com.werb.pickphotoview.util.PickConfig
 import kotlinx.android.synthetic.main.activity_main.*
-import android.support.v7.widget.GridLayoutManager
 import com.werb.library.MoreAdapter
 import com.werb.library.link.RegisterItem
 

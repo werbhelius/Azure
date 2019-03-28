@@ -3,7 +3,7 @@ package com.werb.azure.sample
 import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.otaliastudios.cameraview.CameraListener
 import com.werb.pickphotoview.util.PickConfig
 import kotlinx.android.synthetic.main.activity_camera.*
